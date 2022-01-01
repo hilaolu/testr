@@ -42,10 +42,4 @@ jobs:
       options: -v .:/github/workspace
     steps:
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag voj-judger:$(date +%s): 
-      image: docker
-      volumes:
-      - .:/github/workspace
-    steps:
-    - name: Build the Docker image
       run: pwd
