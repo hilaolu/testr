@@ -39,7 +39,7 @@ jobs:
     needs: build
     container: 
       image: docker
-      options: -v ${PWD}/:/github/workspace
+      options: -v ${{ env.GITHUB_WORKSPACE }}/:/github/workspace
     steps:
     - name: Build the Docker image
       run: pwd
