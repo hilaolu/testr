@@ -40,7 +40,7 @@ jobs:
     container: 
       image: docker
       volumes:
-      - $env:GITHUB_WORKSPACE:/github/workspace
+      - ${env:GITHUB_WORKSPACE}:/github/workspace
     steps:
     - name: Build the Docker image
       run: pwd
