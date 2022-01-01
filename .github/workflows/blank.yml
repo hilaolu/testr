@@ -15,9 +15,13 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  touch:
+    runs-on: ubuntu-latest
+    steps:
+    - run: touch test
 
   publish:
-
+    
     runs-on: ubuntu-latest
     container: 
       image: docker
@@ -25,4 +29,4 @@ jobs:
         -v ${{ github.workspace }}:/github/home
     steps:
     - name: Build the Docker image
-      run: pwd
+      run: ls -l && pwd
