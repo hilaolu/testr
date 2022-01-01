@@ -26,7 +26,8 @@ jobs:
     container: 
       image: docker
       options: |
-        -v ${{ github.workspace }}:/github/home
+        -v ${{ github.workspace }}:/github/workspace -w /github/workspace
+  
     steps:
     - name: Build the Docker image
       run: ls -l && pwd
